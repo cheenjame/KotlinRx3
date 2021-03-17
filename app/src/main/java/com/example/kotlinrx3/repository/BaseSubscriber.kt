@@ -26,8 +26,6 @@ abstract class BaseSubscriber<T>(context: Context) : DisposableSubscriber<T>() {
         if (t is ApiGlobalJson<*>) {
             if (t.rescode == "0") {
                 Toast.makeText(context, t.resmsg, Toast.LENGTH_LONG).show()
-            } else {
-                Log.d("XXoo", "= " + t.toString())
             }
         }
     }
@@ -38,25 +36,25 @@ abstract class BaseSubscriber<T>(context: Context) : DisposableSubscriber<T>() {
         }
         when (e) {
             is SocketTimeoutException -> {
-                Log.d("XXXYY1", "==")
+                Log.d("SocketTimeoutException", "==")
             }
             is SocketException -> {
-                Log.d("XXXYY2", "==")
+                Log.d("SocketException", "==")
             }
             is ConnectException -> {
-                Log.d("XXXYY3", "==")
+                Log.d("ConnectException", "==")
             }
             is IOException -> {
-                Log.d("XXXYY4", "==")
+                Log.d("IOException", "==")
             }
             is JSONException -> {
-                Log.d("XXXYY5", "==")
+                Log.d("JSONException", "==")
             }
             is JsonSyntaxException -> {
-                Log.d("XXXYY6", "==")
+                Log.d("JsonSyntaxException", "==")
             }
             is UnknownHostException -> {
-                Log.d("XXXYY7", "==")
+                Log.d("UnknownHostException", "==")
             }
         }
 
